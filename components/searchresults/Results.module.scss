@@ -1,0 +1,269 @@
+@import '../../styles/variables.scss';
+
+.resultpage {
+
+    .while_waiting {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 375px) {
+            flex-direction: column;
+        }
+
+        .title {
+            @include title();
+
+            @media screen and (max-width: 375px) {
+                font-size: 28px;
+            }
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-top: 40px;
+
+            @media screen and (max-width: 375px) {
+                font-size: 18px;
+            }
+        }
+
+        .banner {
+            @media screen and (max-width: 375px) {
+                width: 350px;
+                height: 233px;
+            }
+        }
+    }
+
+    .section_title {
+        @include section_title();
+        font-size: 30px;
+
+        @media screen and (max-width: 375px) {
+            font-size: 28px;
+        }
+    }
+
+    .slider_section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 70px;
+
+        .resultsnumber {
+            font-size: 18px;
+            color: $base-gray;
+        }
+
+        .slider_wrapper {
+            display: flex;
+            align-items: center;
+
+            .carusel_button {
+                background: none;
+            }
+
+            .slider {
+                width: 100%;
+                height: 158px;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                border: 2px solid $base-cian;
+
+                @media screen and (max-width: 375px) {
+                   flex-direction: column;
+                   height: 140px;
+                }
+
+                .slider_element {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    font-size: 18px;
+
+                    @media screen and (max-width: 375px) {
+                        flex-direction: row;
+                    }
+                }
+
+                .header {
+                    width: 133px;
+                    height: 100%;
+                    background-color: $base-cian;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    color: $base-white;
+                    font-size: 20px;
+                    font-weight: 500;
+                    display: flex;
+                    justify-content: center;
+
+                    @media screen and (max-width: 375px) {
+                        width: 100%;
+                        height: 50%;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        border-bottom-left-radius: 0;
+                    }
+
+                    .slider_header {
+                        align-self: center;
+                    }
+                }
+
+                .slider_card {
+                    width: 135px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    border-right: 3px solid $base-gray;
+
+                    @media screen and (max-width: 375px) {
+                        border-right: none;
+                        margin-top: 20px;
+                    }
+                }
+
+                .loader {
+                    @include loader();
+                }
+            }
+        }
+
+    }
+
+    .docs_section {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .error_docs {
+            font-size: 20px;
+            color: $error-red;
+        }
+
+        .loader_docs {
+            @include loader();
+        }
+
+        .docs_wrapper {
+
+            .docs_cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 30px;
+
+                .docs_card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    width: 601px;
+                    height: 674px;
+                    border-radius: 10px;
+                    box-shadow: 0px 0px 20px 0px #00000033;
+                    padding: 10px 20px;
+
+                    font-size: 16px;
+                    letter-spacing: 0.02em;
+                    text-align: left;
+                    color: $base-gray;
+
+                    @media screen and (max-width: 375px) {
+                        width: 305px;
+                        height: fit-content;
+                        gap: 20px;
+                    }
+
+
+                    .docs_header {
+                        display: flex;
+                        gap: 15px;
+
+                        .source {
+                            color: $base-gray;
+
+                            &:hover {
+                                color: $base-cian;
+                                font-weight: 500;
+                            } 
+                        }
+                    }
+
+                    .docs_main {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        
+                        .title {
+                            font-size: 26px;
+                            font-weight: 500;
+                            color: $base-black;
+                        }
+
+                        .docs_bage {
+                            width: 157px;
+                            height: 16px;
+                            border-radius: 5px;
+                            background-color: $yellow;
+                            font-size: 14px;
+                            color: $base-black;
+                            padding: 5px;
+                        }
+
+                        .card_image {
+                            @media screen and (max-width: 375px) {
+                                width: 297px;
+                                height: fit-content;
+                            }
+
+                        }
+                    }
+                }
+
+                .card_footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .source {
+                        color: $base-black;
+                        text-decoration: none;
+                    }
+
+                    .toSource {
+                        padding: 10px 25px;
+                        background-color: $light-cian;
+
+                        &:hover {
+                            @include hover();
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+        .loadmore {
+            background-color: $buttton-blue;
+            color: $base-white;
+            width: 20%;
+            padding: 20px 0;
+            align-self: center;
+            font-size: 22px;
+            font-weight: 500;
+            transition: .4s;
+
+            &:hover {
+                @include hover2();
+            }
+
+            @media screen and (max-width: 375px) {
+                width: 70%;;
+            }
+        }
+}

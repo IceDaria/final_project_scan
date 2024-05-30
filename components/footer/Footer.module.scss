@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.footer {
+    height: 137px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: $base-white;
+    flex-shrink: 0;
+
+    .adress{
+        margin-bottom: 10px;
+    }
+}

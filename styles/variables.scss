@@ -1,0 +1,93 @@
+$base-cian: #029491;
+$base-black: #000000;
+$base-white: #ffffff;
+$base-gray: #999999;
+$error-red: #FF5959;
+
+$yellow: #FFB64F;
+$light-cian: #7CE3E1;
+$buttton-blue: #5970FF;
+
+@mixin hover {
+    -webkit-box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+@mixin hover2 {
+    transition: .4s;
+    background-color: $base-white;
+    border: 2px solid $buttton-blue;
+    color: $buttton-blue;
+}
+
+@mixin title {
+    font-size: 40px;
+    font-weight: 900;
+    color: $base-black;
+    text-transform: uppercase;
+    font-family: 'Ferry', sans-serif;
+}
+
+@mixin section_title {
+    font-family: 'Ferry', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+
+}
+
+@mixin button {
+    background-color: $buttton-blue;
+    color: $base-white;
+    font-size: 20px;
+}
+
+@mixin form_inputs {
+    border: 1px solid #C7C7C7;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+@mixin error {
+    color: $error-red;
+    font-size: 14px;
+    text-align: center;
+}
+
+@mixin loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin mobile_header_button {
+    width: 180px;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+@mixin mobile_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $base-cian;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+@mixin mobile_menu-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 350px;
+}

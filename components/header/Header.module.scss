@@ -1,0 +1,286 @@
+@import '../../styles/variables.scss';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &.active {
+        background-color: $base-cian;
+    }
+}
+
+.nav_wrapper {
+    @media screen and (max-width: 375px) {
+        @include mobile_menu();
+    }
+
+    &.active {
+        display: block;
+        max-height: 350px;
+    }
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    list-style-type: none;
+    font-size: 14px;
+
+    @media screen and (max-width: 375px) {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .link_wrapper {
+        @media screen and (max-width: 375px) {
+            height: 35px;
+            align-self: center;
+            margin-top: 15px;
+        }
+
+    }
+    
+    .link {
+        text-decoration: none;
+        color: $base-black;
+        font-size: 14px;
+        cursor: pointer;
+
+        @media screen and (max-width: 375px) {
+            font-size: 10px;
+            white-space: nowrap;
+            color: $base-white;
+            font-size: 18px;
+        }
+    
+        &:hover {
+            color: $base-cian;
+            font-weight: 500;
+        }   
+    }
+}
+
+.loggedmenu {
+    display: flex;
+    gap: 100px;
+
+    .companies {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 10px;
+        font-weight: 400;
+        text-align: left;
+        color: $base-gray;
+        width: 175px;
+        height: 63px;
+        border-radius: 5px;
+        background-color: #f4f4f4;
+
+        .used, .left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .used_number, .left_number {
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            .used_number {
+                color: $base-black;
+            }
+
+            .left_number {
+                color: #8AC540;
+            }
+        }
+    } 
+
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media screen and (max-width: 375px) {
+            @include mobile_menu();
+            top: 250%;
+        }
+    
+        &.active {
+            @include mobile_menu-active();
+        }
+
+        .userinfo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;   
+
+            .username {
+                font-size: 14px;
+                text-align: left;
+
+                @media screen and (max-width: 375px) {
+                    display: none;
+                } 
+            }
+
+            .logout {
+                background: none;
+                font-size: 10px;
+                color: $base-gray;
+
+                @media screen and (max-width: 375px) {
+                    @include mobile_header_button();
+                    background-color: $light-cian;
+                    font-size: 14px;
+                    color: $base-black;
+                }
+
+                &:hover {
+                    color: $base-black;
+                    font-weight: 500;
+                }
+                
+            }
+        }
+
+        .useravatar {
+            border-radius: 50%;
+            overflow: hidden;
+            display: block;
+                
+            @media screen and (max-width: 375px) {
+                display: none;
+            }
+            
+        }
+    }
+}
+
+.unloggedmenu {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: 375px) {
+        @include mobile_menu();
+        top: 250%;
+    }
+
+    &.active {
+        @include mobile_menu-active();
+    }
+
+    .singUp {
+        background-color: $base-white;
+        color: $base-gray;
+        font-size: 14px;
+        padding: 0;
+        text-decoration: none;
+        align-self: center;
+
+        &:hover {
+            color: $base-cian;
+            font-weight: 500;
+         }
+
+        @media screen and (max-width: 375px) {
+            background-color: $base-cian;
+            margin-top: 20px;
+            color: $base-white;
+        }
+    }
+
+    .line {
+        width: 2px;
+        height: 26px;
+        background-color: $light-cian;
+
+        @media screen and (max-width: 375px) {
+            display: none;
+        }
+    }
+
+    .logIn {
+        background-color: $light-cian;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 5px 10px 5px 10px;
+        transition: all 0.3s ease-in-out;
+
+        @media screen and (max-width: 375px) {
+            @include mobile_header_button();
+        }
+        
+        &:hover {
+            @include hover();
+            transition: 0.5s linear;
+        }
+
+        &:active {
+            transform: scale(0.95);
+          }
+    } 
+}
+
+
+.burgerMenu {
+    display: none;
+  
+    @media screen and (max-width: 375px) {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      background: transparent;
+      width: 40px;
+      height: 26px;
+      padding: 0;
+      margin: 0;
+      z-index: 1;
+      transform: scale(0.7);
+  
+      &::before,
+      &::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 5px;
+        background: $base-cian;
+      }
+  
+      &::before {
+        top: 0;
+        box-shadow: 0 11px 0 $base-cian;
+        transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+      }
+  
+      &::after {
+        bottom: 0;
+        transition: bottom 0.3s 0.15s, transform 0.3s;
+      }
+  
+      &.active::before {
+        z-index: 1;
+        top: 11px;
+        background: $base-white;
+        transform: rotate(45deg);
+        box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+        transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+      }
+  
+      &.active::after {
+        z-index: 1;
+        bottom: 11px;
+        background: $base-white;
+        transform: rotate(-45deg);
+        transition: bottom 0.3s, transform 0.3s 0.15s;
+      }
+    }
+}  

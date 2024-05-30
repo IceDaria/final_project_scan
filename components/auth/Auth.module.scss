@@ -1,0 +1,171 @@
+@import '../../styles/variables.scss';
+
+.auth {
+    display: flex;
+
+    @media screen and (max-width: 375px) {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        @include title();
+        max-width: 800px;
+
+        @media screen and (max-width: 375px) {
+            font-size: 28px;
+        }
+    }
+}
+
+.authform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 377px;
+    height: 477px;
+    box-shadow: 0px 0px 20px 0px #00000026;
+    border-radius: 10px;
+    padding: 28px 25px 28px 25px;
+    font-size: 16px;
+    color: $base-gray;
+    position: relative;
+
+    @media screen and (max-width: 375px) {
+        width: 295px;
+    }
+
+    .lock {
+        position: absolute;
+        top: -60px;
+        left: -50px;
+
+        @media screen and (max-width: 375px) {
+            top: -10px;
+            left: -10px;
+            width: 55px;
+            height: fit-content;
+        }
+    }
+
+    .formheader {
+        display: flex;
+        justify-content: space-around;
+
+        .tabs {
+            position: relative;
+            padding-bottom: 8px;
+            color: $base-cian;
+            cursor: pointer;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $base-cian; 
+            }
+
+            &:last-child {
+                color: $base-gray;
+
+                &:after {
+                    background-color: $base-gray; 
+                }
+            }
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+
+        .form_wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .label {
+                margin-bottom: 15px;
+                margin-top: 15px;
+            }
+
+            .input {
+                border: 1px solid $base-gray;
+                box-shadow: 0rem 0rem 1.25rem 0rem #0000000D;
+                height: 43px;
+                border-radius: 5px;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 0 10px;
+                color: $base-cian;
+            }
+            .input.error_input {
+                border-color: $error-red;
+                box-shadow: 0px 0px 20px 0px #FF595933;
+            }
+
+            .error_message {
+                @include error()
+            }
+        }
+        
+        .form_button {
+            display: flex;
+            justify-content: center;
+            margin-top: 23px;
+            margin-bottom: 23px;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: 500;
+            color: $base-white;
+            background-color: $buttton-blue;
+
+            &:not(:disabled):hover {
+                @include hover();
+            }
+        }
+
+        .form_button:disabled {
+            opacity: 40%;
+            cursor: default;
+        }
+
+        .form_link{
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .buttons {
+            display: flex;
+            gap: 15px
+            ;
+            .auth_social{
+                width: 96px;
+                height: 33px;
+                background: none;
+                border: 1px solid $buttton-blue;
+                padding: 5px;
+
+                &:hover {
+                    @include hover();
+                }
+                
+            }
+        }
+    }
+    
+}
