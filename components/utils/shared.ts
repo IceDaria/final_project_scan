@@ -7,7 +7,7 @@ import beginner from '@/public/begginer.png'
 import pro from '@/public/pro.png';
 import business from '@/public/business.png';
 import check from '@/public/check.png';
-import { Tariff } from '@/Shared/types';
+import { HistogramParams, Tariff } from '@/Shared/types';
 import { StaticImageData } from 'next/image';
 
 export const cardsInfo = [

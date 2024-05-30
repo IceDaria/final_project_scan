@@ -23,8 +23,10 @@ export default function SearchForm() {
     const SearchParams = useSelector((state: RootState) => state.histograms.histogramsParams);
 
     useEffect(() => {
-        // При монтировании компонента сбрасываем форму
-        dispatch(resetFormReducer());
+        // При размонтировании компонента сбрасываем состояние формы и данные о гистограммах
+        return () => {
+            dispatch(resetFormReducer()); // Сброс состояния формы
+        };
     }, [dispatch]);
 
     // Обработчик для поля ИНН
@@ -138,6 +140,7 @@ export default function SearchForm() {
             console.log('Отправка формы с параметрами:', SearchParams);
             dispatch(PostObjectSearch(SearchParams));
             dispatch(PostHistograms(SearchParams));
+            dispatch(resetFormReducer());
             router.push('/result');
         }
     }

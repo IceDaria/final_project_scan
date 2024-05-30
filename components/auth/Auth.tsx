@@ -7,7 +7,7 @@ export default function Auth() {
     return (
         <div className={`${s.auth} container`}>
             <div className={s.wrapper}>
-                <h1 className={s.title}>Для оформления подписки на тариф, необходимо авторизоваться.</h1>
+                <h1 className={s.title}>Для оформления подписки<br/> на тариф, необходимо<br/> авторизоваться.</h1>
                 <Image 
                     src={banner}
                     alt='Our logo'
