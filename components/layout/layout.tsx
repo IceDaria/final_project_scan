@@ -7,8 +7,8 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
       <Head>
-        <title>BookShop on Next</title>
-        <meta name="description" content="Scan Project />
+        <title>Scan Project</title>
+        <meta name="description" content="Scan Project" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Ice Daria" />
         <link rel="icon" href="/favicon.ico" />
