@@ -39,7 +39,7 @@
 2. Осмысленно называйте компоненты, переменные и функции.
 3. Используйте современный синтаксис: функциональные React-компоненты и хуки, стрелочные функции, декомпозицию и так далее.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
